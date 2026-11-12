@@ -1,0 +1,187 @@
+/* Story Studio — refreshed editorial blue interface */
+:root {
+    --ink: #172033;
+    --muted: #64748b;
+    --line: #dbe4f0;
+    --surface: #ffffff;
+    --soft: #f1f5fb;
+    --accent: #315fbd;
+    --accent-dark: #244a98;
+}
+
+.stApp {
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(219, 232, 255, 0.7), transparent 42%),
+        #f7f9fc;
+    color: var(--ink);
+}
+
+header[data-testid="stHeader"] { background: transparent; }
+
+.block-container {
+    max-width: 850px;
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+}
+
+.page-heading {
+    text-align: center;
+    margin: 0 auto 2.7rem;
+    padding: 2rem 1.5rem 1.8rem;
+    background: rgba(255,255,255,0.78);
+    border: 1px solid rgba(219,228,240,0.9);
+    border-radius: 24px;
+    box-shadow: 0 12px 36px rgba(32, 55, 95, 0.06);
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    background: #eaf1ff;
+    border: 1px solid #d8e5ff;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.16em;
+    padding: 0.45rem 0.8rem;
+    margin-bottom: 1.1rem;
+}
+
+.page-heading h1 {
+    color: var(--ink);
+    font-size: clamp(2.5rem, 6vw, 3.6rem);
+    font-weight: 750;
+    letter-spacing: -0.06em;
+    line-height: 1.05;
+    margin: 0 0 0.9rem;
+}
+
+.page-heading p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 540px;
+}
+
+.section-label {
+    color: #43516a;
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+    margin: 0 0 0.8rem;
+}
+
+div[data-testid="stTextArea"] textarea {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.75;
+    padding: 1.1rem 1.2rem;
+    box-shadow: 0 4px 16px rgba(32, 55, 95, 0.035);
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+div[data-testid="stTextArea"] textarea:focus {
+    border-color: #8eace8;
+    box-shadow: 0 0 0 3px rgba(49, 95, 189, 0.12);
+}
+
+div[data-testid="stSelectbox"] label,
+div[data-testid="stSlider"] label {
+    color: #43516a;
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+}
+
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    background: #ffffff;
+    border-color: var(--line);
+    border-radius: 12px;
+    min-height: 2.8rem;
+}
+
+div[data-testid="stSlider"] [data-baseweb="slider"] {
+    padding-top: 0.35rem;
+}
+
+div[data-testid="stButton"] > button {
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 13px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    min-height: 3.2rem;
+    box-shadow: 0 6px 16px rgba(49, 95, 189, 0.18);
+    transition: transform 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+
+div[data-testid="stButton"] > button:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 9px 20px rgba(49, 95, 189, 0.23);
+}
+
+div[data-testid="stButton"] > button:focus {
+    box-shadow: 0 0 0 3px rgba(49, 95, 189, 0.2);
+}
+
+.result-divider {
+    border-top: 1px solid var(--line);
+    margin: 2.5rem 0 1.8rem;
+}
+
+.story-original,
+.story-output {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    color: #26334a;
+    font-size: 1rem;
+    line-height: 1.9;
+    padding: 1.35rem 1.5rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    box-shadow: 0 8px 24px rgba(32, 55, 95, 0.045);
+}
+
+.story-original {
+    background: var(--soft);
+    color: #596981;
+    border-left: 4px solid #b7c9e8;
+}
+
+.story-output {
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(135deg, #ffffff, #fafdff);
+}
+
+.generated-label { margin-top: 1.7rem; }
+
+.footer-note {
+    border-top: 1px solid var(--line);
+    color: #8793a6;
+    font-size: 0.78rem;
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    text-align: center;
+}
+
+#MainMenu, footer { visibility: hidden; }
+
+@media (max-width: 640px) {
+    .block-container { padding: 2rem 1rem 1.8rem; }
+    .page-heading {
+        padding: 1.6rem 1rem;
+        margin-bottom: 2rem;
+        border-radius: 18px;
+    }
+    .page-heading h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+    .story-original, .story-output { padding: 1.05rem 1.1rem; }
+}
